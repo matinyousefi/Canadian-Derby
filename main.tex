@@ -1,0 +1,105 @@
+% بسم الله الرحمن الرحیم
+\documentclass[12pt]{article}
+
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry} % for setting the margins
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb} % ams packages contain awesome math stuff
+\usepackage{hyperref} % adding links to the problems
+\usepackage{fancyhdr} % for the fancy headers
+\usepackage[dvipsnames]{xcolor} % to use custom colors
+\usepackage{xepersian} % supports persian charachters
+
+\settextfont[BoldFont=XbNiloofarBd.ttf, ItalicFont= XbNiloofarIt.ttf, BoldItalicFont=XbNiloofarBdIt.ttf]{XbNiloofar.ttf}
+\setlatintextfont{Times New Roman}
+
+\definecolor{linkcolor}{rgb}{0.13, 0.55, 0.13}
+
+\newcounter{counter}
+
+\newcommand{\problem}[1]{\leavevmode\linebreak\noindent\refstepcounter{counter}\href{#1}{\bfseries مسئله \thecounter .}}
+
+\newcommand{\englishtext}[1]{
+\leavevmode\linebreak\noindent{\left\lr{#1}}
+}
+
+% To disable the links, use this instead of the above:
+% \newcommand{\problem}[1]{\leavevmode\linebreak\noindent\refstepcounter{counter}{\bfseries مسئله \thecounter .}}
+
+\hypersetup{
+    colorlinks=true,    
+    urlcolor=linkcolor
+}
+
+% Define the subject/title as a command
+\newcommand{\subjecttitle}{یک دربی کانادایی}
+
+% Define fancy header for the first page
+\fancypagestyle{firstpage}{
+    \fancyhf{} % پاک کردن هدر و فوتر پیش‌فرض
+    \rhead{به نام خدا}
+    \chead{\LARGE \subjecttitle}
+    \lhead{تنها باید از ترس ترسید...} 
+    % \cfoot{\thepage} % Optional if you want to add page numbers
+}
+
+% Define fancy header for subsequent pages
+\fancypagestyle{main}{
+    \fancyhf{} % Clear all headers and footers
+    \lhead{متین یوسفی}
+    \rhead{\subjecttitle}
+}
+
+\begin{document}
+
+\thispagestyle{firstpage}
+\pagestyle{main}
+
+\problem{https://artofproblemsolving.com/community/c6h3522710p34216070}
+$n$ بازیکن یک تیم هاکی دور هم جمع می‌شوند تا کاپیتان تیم را انتخاب کنند. در ابتدا، آن‌ها در یک دایره می‌ایستند و هر نفر به فرد سمت چپ خود رأی می‌دهد. بازیکنان رأی خود را در طی چندین دور به روز می‌کنند. در هر دور، هر بازیکن $a$ رأی خود را یک بار (و به ترتیبی که بازیکنان تعیین می‌کنند) به این صورت به‌روزرسانی می‌کند: اگر در لحظه به‌روزرسانی، $a$ به $b$ رأی داده باشد و $b$ به $c$ رأی داده باشد، آن‌گاه $a$ رأی خود را به $c$ تغییر می‌دهد. این فرآیند برای $n$ دور تکرار می‌شود. ثابت کنید که پس از این مدت، همه $n$ بازیکن به یک نفر رأی خواهند داد.
+
+\englishtext{The $n$ players of a hockey team gather to select their team captain. Initially, they stand in a circle, and each person votes for the person on their left. The players will update their votes via a series of rounds. In one round, each player $a$ updates their vote, one at a time, according to the following procedure: At the time of the update, if $a$ is voting for $b,$ and $b$ is voting for $c,$ then $a$ updates their vote to $c.$ They repeat this updating procedure for $n$ rounds. Prove that at this time, all $n$ players will unanimously vote for the same person.}
+
+\problem{https://artofproblemsolving.com/community/c6h3522723p34216137}
+تمام اعداد صحیح مثبت $a$، $b$، $c$ و $p$ را بیابید که در آن $p$ و $p+2$ اعداد اول فرد باشند و 
+\[ 2^a p^b = (p+2)^c - 1. \]
+
+\englishtext{Determine all positive integers $a$, $b$, $c$, $p$, where $p$ and $p+2$ are odd primes and 
+\[ 2^a p^b = (p+2)^c - 1. \]}
+
+\problem{https://artofproblemsolving.com/community/c6h3522724p34216145}
+یک چندجمله‌ای $c_d x^d + c_{d-1} x^{d-1} + \dots + c_1 x + c_0$ با درجه $d$ را بازتابی می‌نامیم اگر عدد صحیح $n \ge d$ وجود داشته باشد به طوری که برای هر $0 \le i \le n$ داشته باشیم $c_i = c_{n-i}$. فرض کنید $\ell \ge 2$ یک عدد صحیح باشد و $p(x)$ یک چندجمله‌ای با ضرایب صحیح. ثابت کنید چندجمله‌ای‌های بازتابی $q(x)$ و $r(x)$ با ضرایب صحیح وجود دارند به طوری که 
+\[ (1 + x + x^2 + \dots + x^{\ell-1}) p(x) = q(x) + x^\ell r(x). \]
+
+\englishtext{A polynomial $c_dx^d + c_{d-1}x^{d-1} + \dots + c_1x + c_0$ with degree $d$ is called reflexive if there is an integer $n \ge d$ such that $c_i = c_{n-i}$ for every $0 \le i \le n$. Let $\ell \ge 2$ be an integer and $p(x)$ be a polynomial with integer coefficients. Prove that there exist reflexive polynomials $q(x)$, $r(x)$ with integer coefficients such that 
+\[ (1 + x + x^2 + \dots + x^{\ell-1}) p(x) = q(x) + x^\ell r(x). \]}
+
+\problem{https://artofproblemsolving.com/community/c6h3272707p30115282}
+فرض کنید $ABC$ یک مثلث با مرکز دایره محاطی $I$ باشد. بازتاب $AB$ نسبت به $CI$ و بازتاب $AC$ نسبت به $BI$ در نقطه‌ای به نام $X$ یکدیگر را قطع می‌کنند. ثابت کنید که $XI$ بر $BC$ عمود است.
+
+\englishtext{Let $ABC$ be a triangle with incenter $I$. Suppose the reflection of $AB$ across $CI$ and the reflection of $AC$ across $BI$ intersect at a point $X$. Prove that $XI$ is perpendicular to $BC$.}
+
+\problem{https://artofproblemsolving.com/community/c6h3272708p30115290}
+جان دور یک دایره $2024$ عدد طبیعی می‌نویسد. او می‌خواهد حاصل‌ضرب هر جفت عدد مجاور دقیقاً برابر مجموعه $\{1!,\, 2!,\, \dots,\, 2024!\}$ باشد. آیا او می‌تواند این کار را انجام دهد؟
+
+\englishtext{Jane writes down $2024$ natural numbers around the perimeter of a circle. She wants the $2024$ products of adjacent pairs of numbers to be exactly the set $\{1!,\, 2!,\, \ldots,\, 2024!\}$. Can she accomplish this?}
+
+\problem{https://artofproblemsolving.com/community/c6h3272717p30115345}
+گنجی در یکی از خانه‌های یک شبکه $M \times N$ (با $2 \le M, N$) دفن شده است. برای یافتن آن، از آشکارسازهایی استفاده می‌شود. هر آشکارساز می‌تواند یک زیرشبکه خاص $[a,b] \times [c,d]$ را اسکن کند. شما می‌خواهید $Q$ آشکارساز را به گونه‌ای تنظیم کنید که پس از آماده‌سازی همه آن‌ها، بتوانید مکان گنج را قطعاً مشخص کنید. حداقل مقدار مورد نیاز $Q$ برحسب $M$ و $N$ چقدر است؟
+
+\englishtext{Treasure was buried in a single cell of an $M \times N$ ($2 \le M, N$) grid. Detectors were brought to find the cell with the treasure. For each detector, you can set it up to scan a specific subgrid $[a,b] \times [c,d]$. You plan on setting up $Q$ detectors which may only be run simultaneously after all $Q$ detectors are ready. In terms of $M$ and $N$, what is the minimum $Q$ required to guarantee to determine the location of the treasure?}
+
+\problem{https://artofproblemsolving.com/community/c6h2799959p24727085}
+اگر $ab+\sqrt{ab+1}+\sqrt{a^2+b}\sqrt{a+b^2}=0$، مقدار عبارت زیر را بیابید:
+$$b\sqrt{a^2+b}+a\sqrt{b^2+a}$$
+
+\englishtext{If $ab+\sqrt{ab+1}+\sqrt{a^2+b}\sqrt{a+b^2}=0$, find the value of:
+$$b\sqrt{a^2+b}+a\sqrt{b^2+a}$$}
+
+\problem{https://artofproblemsolving.com/community/c6h3029963p27258217}
+فرض کنید $ABC$ یک مثلث حاده‌گوشه با ارتفاعات $AD$، $BE$ و $CF$ باشد که در نقطه $H$ همدیگر را قطع می‌کنند. دایره‌ای که از نقاط $D$، $E$ و $F$ می‌گذرد، ارتفاعات را مجدداً در نقاط $X$، $Y$ و $Z$ قطع می‌کند. ثابت کنید:
+$$\frac{AH}{DX}+\frac{BH}{EY}+\frac{CH}{FZ} \geq 3.$$
+
+\englishtext{Let $ABC$ be an acute triangle with altitudes $AD$, $BE$, and $CF$ meeting at $H$. The circle passing through points $D$, $E$, and $F$ meets $AD$, $BE$, and $CF$ again at $X$, $Y$, and $Z$ respectively. Prove:
+$$\frac{AH}{DX}+\frac{BH}{EY}+\frac{CH}{FZ} \geq 3.$$}
+\end{document}
